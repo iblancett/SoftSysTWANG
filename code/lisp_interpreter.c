@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define OP_ADD '+'
-#define OP_SUB '-'
-#define OP_MUL '*'
-#define OP_DIV '/'
+
 
 
 
@@ -60,6 +57,11 @@ int compute_div(char* expr) {
     return m / n;
 }
 
+#define OP_ADD '+'
+#define OP_SUB '-'
+#define OP_MUL '*'
+#define OP_DIV '/'
+
 int eval(char* expr) {  
     if (*(expr++) != '(') {
         printf("Error: must begin with a '(' \n");
@@ -70,7 +72,6 @@ int eval(char* expr) {
 
     int result = 0;
     switch (op) {
-        switch (op) {
         case OP_ADD:
             result = compute_add(expr);
             break;
