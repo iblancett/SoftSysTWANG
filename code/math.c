@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 
-
 int compute_add(char* expr) {
 
     int sum = 0;
@@ -18,6 +17,28 @@ int compute_add(char* expr) {
     }
 
     return sum;
+}
+
+int compute_diff(char* expr) {
+
+    while(*expr == ' ') {
+        expr++;
+    }
+
+    int diff = 0;
+    sscanf(expr++, "%d", &diff);
+
+    while (*expr != ')') {
+        if (*expr == ' ') {
+            expr++; continue;
+        }
+
+        int m = 0;
+        sscanf(expr++, "%d", &m);
+        diff -= m;
+    }
+
+    return diff;
 }
 
 int compute_product(char* expr) {
@@ -55,10 +76,14 @@ int compute_div(char* expr) {
     return m / n;
 }
 
+
+
 #define OP_ADD '+'
 #define OP_SUB '-'
 #define OP_MUL '*'
 #define OP_DIV '/'
+#define OP_EQ  '='
+#define OP_COM '<'
 
 int eval(char* expr) {
     if (*(expr++) != '(') {
@@ -73,11 +98,20 @@ int eval(char* expr) {
         case OP_ADD:
             result = compute_add(expr);
             break;
+        case OP_SUB:
+            result = compute_diff(expr);
+            break;
         case OP_MUL:
             result = compute_product(expr);
             break;
-        //case OP_DIV:
-            //result = compute_div(expr);
+        case OP_DIV:
+            result = compute_div(expr);
+            break;
+        //case OP_EQ:
+            //result = compute_eq(expr);
+            //break;
+        //case OP_COM:
+            //result = compute_com(expr);
             //break;
         default:
             result = 0; // undefined operation
