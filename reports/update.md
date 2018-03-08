@@ -1,4 +1,4 @@
-### Twang - a Lisp based programming language
+### Twang - a Lisp interpreter in C
 #### Emily Lepert and Isa Blancett
 
 The goal of this project is to create our own LISP interpreter in C. Our MVP would be to complete a basic Lisp interpreter that can process logical statements, loops, functions, and variable definitions. Our stretch goal is to implement literal lists and perhaps string operators.
