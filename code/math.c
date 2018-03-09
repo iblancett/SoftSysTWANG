@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define FALSE "()"
+#define TRUE  "t"
 
 int compute_add(char* expr) {
 
@@ -76,6 +78,52 @@ int compute_div(char* expr) {
     return m / n;
 }
 
+char *compute_eq(char* expr) {
+    int m = 0;
+    int n = 0;
+
+    while(*(++expr) == ' ');
+
+    // first value found
+    sscanf(expr, "%d", &m);
+    ++expr;
+
+    while(*(++expr) == ' ');
+
+    // second value found
+    sscanf(expr, "%d", &n);
+
+    if (m==n) {
+        return TRUE;
+    }
+    else {
+        return FALSE;
+    }
+}
+
+char *compute_comp(char* expr) {
+    int m = 0;
+    int n = 0;
+
+    while(*(++expr) == ' ');
+
+    // first value found
+    sscanf(expr, "%d", &m);
+    ++expr;
+
+    while(*(++expr) == ' ');
+
+    // second value found
+    sscanf(expr, "%d", &n);
+
+    if (m<n) {
+        return TRUE;
+    }
+    else {
+        return FALSE;
+    }
+}
+
 
 
 #define OP_ADD '+'
@@ -107,12 +155,12 @@ int eval(char* expr) {
         case OP_DIV:
             result = compute_div(expr);
             break;
-        //case OP_EQ:
-            //result = compute_eq(expr);
-            //break;
-        //case OP_COM:
-            //result = compute_com(expr);
-            //break;
+        case OP_EQ:
+            result = *compute_eq(expr);
+            break;
+        case OP_COM:
+            result = *compute_comp(expr);
+            break;
         default:
             result = 0; // undefined operation
             break;
@@ -126,7 +174,7 @@ char* read() {
     fgets(expr, 256, stdin);
     return expr;
 }
-
+/*
 int main(int argc, char* argv[]) {
     while (1) {
         printf("-> %d\n", eval(read()));
@@ -134,3 +182,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+ */
