@@ -9,5 +9,5 @@ To get started we found a couple tutorials on basic Lisp interpreters. We also f
 
 We were able to implement mathematical functionality (adding, subtracting, dividing, multiplying) and comparative operators (<, =). We were also able to interpret conditionals that used mathematical statements. We also added a test suite for our functions.
 
-<img width="500" src="https://raw.githubusercontent.com/ComplexityVE/SugarEvax/master/images/wealth_redistribution_correct_label.png">
+<img width="100" src="https://raw.githubusercontent.com/iblancett/SoftSysTWANG/master/images/adding.png">
 
