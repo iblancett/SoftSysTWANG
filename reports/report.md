@@ -7,7 +7,7 @@ Our learning goals is to get more familiar with C.
 
 To get started we found a couple tutorials on basic Lisp interpreters. We also found an example of an [open source Lisp interpreter project](https://github.com/rui314/minilisp) which we used to figure out what we wanted to implement.
 
-We were able to implement mathematical functionality (adding, subtracting, dividing, multiplying) and comparative operators (<, =). We were also able to interpret conditionals that used mathematical statements. We also added a test suite for our functions.
+We were able to implement mathematical functionality (adding, subtracting, dividing, multiplying) and comparative operators (<, =) (file [here](https://github.com/iblancett/SoftSysTWANG/blob/master/code/math.c)). We were also able to interpret conditionals that used mathematical statements (file [here](https://github.com/iblancett/SoftSysTWANG/blob/master/code/conditionals.c)). We also added a test suite for our functions (files [here](https://github.com/iblancett/SoftSysTWANG/blob/master/code/test_conditionals.c) and [here](https://github.com/iblancett/SoftSysTWANG/blob/master/code/test_math.c)).
 
 In LISP conditionals are formatted as such: "(if (statement is true) (then do this) (else do this))". For example, "(if (< 5 6) (+ 9 1) ( + 1 2))" checks to see if 5 is less than 6. If it is, it adds 9 and 1 together, if it isn't it adds 1 and 2 together. In this case it would add 9 and 1 together.
 
