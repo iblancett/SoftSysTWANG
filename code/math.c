@@ -134,6 +134,7 @@ char *compute_comp(char* expr) {
 #define OP_EQ  '='
 #define OP_COM '<'
 
+// Function to evaluate mathematical statement
 int eval_math(char* expr, int original) {
     if (original == 0 && *(expr++) != '(' ) {
         printf("Error: must begin with a '(' \n");
@@ -145,9 +146,7 @@ int eval_math(char* expr, int original) {
     int result = 0;
     switch (*op) {
         case OP_ADD:
-
             result = compute_add(expr);
-            
             break;
         case OP_SUB:
             result = compute_diff(expr);
