@@ -1,4 +1,4 @@
-int eval_math(char* expr);
+int eval_math(char* expr, int original);
 int compute_add(char* expr);
 int compute_diff(char* expr);
 int compute_product(char* expr);
