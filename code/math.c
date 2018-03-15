@@ -15,7 +15,9 @@ int compute_add(char* expr) {
 
         int m = 0;
         sscanf(expr++, "%d", &m);
+
         sum += m;
+       
     }
 
     return sum;
@@ -39,7 +41,6 @@ int compute_diff(char* expr) {
         sscanf(expr++, "%d", &m);
         diff -= m;
     }
-
     return diff;
 }
 
@@ -133,18 +134,20 @@ char *compute_comp(char* expr) {
 #define OP_EQ  '='
 #define OP_COM '<'
 
-int eval(char* expr) {
-    if (*(expr++) != '(') {
+int eval_math(char* expr, int original) {
+    if (original == 0 && *(expr++) != '(' ) {
         printf("Error: must begin with a '(' \n");
         return 0;
-    }
+    } 
 
     char* op = expr++; // read the operator
 
     int result = 0;
     switch (*op) {
         case OP_ADD:
+
             result = compute_add(expr);
+            
             break;
         case OP_SUB:
             result = compute_diff(expr);
@@ -169,11 +172,11 @@ int eval(char* expr) {
     return result;
 }
 
-char* read() {
+/*char* read() {
     char* expr = malloc(256);
     fgets(expr, 256, stdin);
     return expr;
-}
+}*/
 /*
 int main(int argc, char* argv[]) {
     while (1) {
