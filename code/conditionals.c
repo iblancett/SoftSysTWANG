@@ -42,7 +42,7 @@ int eval(char* expr, int calln) {
     if (calln == 0){
 
         token  = strtok(expr, s);
-        
+
     } else {
         token = strtok(NULL, "(");
     }
@@ -59,7 +59,7 @@ int eval(char* expr, int calln) {
         result = eval_math(token, 1);
         
     } else {
-        result = eval_math(expr, 0);
+        result = eval_math(expr, 1);
     }
 
     return result;
@@ -71,11 +71,11 @@ char* read() {
     return expr;
 }
 
-/*int main(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
     while (1) {
         int result = eval(read(), 0);
         printf("-> %d\n", result);
     }
 
     return 0;
-}*/
+}
