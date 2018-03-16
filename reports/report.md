@@ -27,3 +27,5 @@ In this case, 6 is not equal to 7, so the interpreter subtracts 4 from 5 and ret
 
 Our initial proposal for our MVP was to complete a LISP tutorial and add functionality. We reached that MVP in this project as we completed a tutorial on interpreting addition, division, and multiplication in C. We then added subtraction, comparators, and conditionals. Our stretch goal was to create our own language and the interpreter for the language in C. We did not get close to achieving that goal, but we have learned more about what goes into designing a language and the interpreter for the language. 
 We both got opportunities to work on our learning goals and practiced writing programs in C.
+
+To run our interpreter, check out our [README](https://github.com/iblancett/SoftSysTWANG/blob/master/README.md)!
