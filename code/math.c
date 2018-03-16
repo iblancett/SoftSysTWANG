@@ -17,15 +17,14 @@ int compute_add(char* expr) {
         sscanf(expr++, "%d", &m);
 
         sum += m;
-       
+
     }
 
     return sum;
 }
 
 int compute_diff(char* expr) {
-
-    while(*expr == ' ') {
+    while(*expr == ' ' || *expr == '-' || *expr == '(') {
         expr++;
     }
 
@@ -49,7 +48,7 @@ int compute_product(char* expr) {
     int product = 1; // 1 is neutral for product
 
     while (*expr != ')') {
-        if (*expr == ' ') {
+        if (*expr == ' ' || *expr == '*' || *expr == '(') {
             expr++; continue;
         }
 
@@ -65,7 +64,9 @@ int compute_div(char* expr) {
     int m = 0;
     int n = 0;
 
-    while(*(++expr) == ' ');
+    while(*expr == ' ' || *expr == '/' || *expr == '(') {
+        expr++;
+    }
 
     // first value found
     sscanf(expr, "%d", &m);
@@ -83,7 +84,9 @@ char *compute_eq(char* expr) {
     int m = 0;
     int n = 0;
 
-    while(*(++expr) == ' ');
+    while(*expr == ' ' || *expr == '=' || *expr == '(') {
+        expr++;
+    }
 
     // first value found
     sscanf(expr, "%d", &m);
@@ -106,7 +109,9 @@ char *compute_comp(char* expr) {
     int m = 0;
     int n = 0;
 
-    while(*(++expr) == ' ');
+    while(*expr == ' ' || *expr == '<' || *expr == '(') {
+        expr++;
+    }
 
     // first value found
     sscanf(expr, "%d", &m);
@@ -139,7 +144,7 @@ int eval_math(char* expr, int original) {
     if (original == 0 && *(expr++) != '(' ) {
         printf("Error: must begin with a '(' \n");
         return 0;
-    } 
+    }
 
     char* op = expr++; // read the operator
 
