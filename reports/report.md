@@ -9,11 +9,11 @@ To get started we found a couple tutorials on basic Lisp interpreters. We also f
 
 We were able to implement mathematical functionality (adding, subtracting, dividing, multiplying) and comparative operators (<, =) (file [here](https://github.com/iblancett/SoftSysTWANG/blob/master/code/math.c)). We were also able to interpret conditionals that used mathematical statements (file [here](https://github.com/iblancett/SoftSysTWANG/blob/master/code/conditionals.c)). We also added a test suite for our functions (files [here](https://github.com/iblancett/SoftSysTWANG/blob/master/code/test_conditionals.c) and [here](https://github.com/iblancett/SoftSysTWANG/blob/master/code/test_math.c)).
 
-In LISP conditionals are formatted as such: "(if (statement is true) (then do this) (else do this))". For example, "(if (< 5 6) (+ 9 1) ( + 1 2))" checks to see if 5 is less than 6. If it is, it adds 9 and 1 together, if it isn't it adds 1 and 2 together. In this case it would add 9 and 1 together.
-
 Here is an example of a mathematical command the shell of our program can take: typing "(+ 5 6)" would result in "11" being returned.
 
 <img width="100" src="https://raw.githubusercontent.com/iblancett/SoftSysTWANG/master/images/adding.png">
+
+In LISP conditionals are formatted as such: "(if (statement is true) (then do this) (else do this))". For example, "(if (< 5 6) (+ 9 1) ( + 1 2))" checks to see if 5 is less than 6. If it is, it adds 9 and 1 together, if it isn't it adds 1 and 2 together. In this case it would add 9 and 1 together.
 
 Below are more examples of our shell working:
 
